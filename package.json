@@ -1,0 +1,24 @@
+{
+  "name": "fouadelkhoury_14082021-main",
+  "version": "1.0.0",
+  "description": "projet03oc",
+  "main": "index.js",
+  "dependencies": {
+    "autoprefixer": "^10.3.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+  
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gozabouro/FouadElKhoury_3_14082021.git"
+  },
+  "author": "Fouad",
+  "license": "ISC",
+  "browserlist": "last 4 versions",
+  "bugs": {
+    "url": "https://github.com/Gozabouro/FouadElKhoury_3_14082021/issues"
+  },
+  "homepage": "https://github.com/Gozabouro/FouadElKhoury_3_14082021#readme"
+}
