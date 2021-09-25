@@ -8,7 +8,7 @@
   },
   "devDependencies": {},
   "scripts": {
-  
+  "prefix": "postcss ./public/css/main.css --use autoprefixer"
   },
   "repository": {
     "type": "git",
