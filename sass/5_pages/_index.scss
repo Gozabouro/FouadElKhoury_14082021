@@ -1,0 +1,185 @@
+.loader_wrapper{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: hsla(0,0%,100%,.9);
+
+    opacity: 1;
+    z-index: 10000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: loaderDisapear 1s ease both;
+    animation-delay: 2.2s;
+
+    .loader{
+        display: flex;
+        flex-direction: row;
+
+        .ball{
+            width: 20px;
+            height: 20px;
+            margin: 0 8px;
+            border-radius: 50%;
+
+            transform: translate3d(0);
+            animation: bounce 0.6s alternate forwards;
+            animation-iteration-count: 3;
+
+            &:nth-child(1){
+                background-color: $tertiary-color;
+            }
+            &:nth-child(2){
+                animation-delay: 0.2s;
+                background-color: $secondary-color;
+            }
+            &:nth-child(3){
+                animation-delay: 0.4s;
+                background-color: $primary-color;
+            }
+        }
+    }
+}
+
+@keyframes bounce {
+    to{
+        transform: translate3d(0, -30px, 0);
+    }
+}
+
+@keyframes loaderDisapear {
+    to{
+        opacity: 0;
+        z-index: -10;
+    }
+}
+
+
+
+.restaurants {
+	padding: 30px 20px;
+	&__boxes {
+		@include grid;
+		padding: 20px 0;
+		@include responsive(laptop) {
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+		}
+	}
+
+	&__box {
+		@include boxes;
+		position: relative;
+	}
+
+	&__img-section {
+		border-radius: 20px 20px 0px 0px;
+		overflow: hidden;
+		height: 175px;
+	}
+
+	&__img {
+		@include img-max;
+	}
+	&__info-section {
+		@include grid;
+		grid-template-columns: 1fr 1fr;
+		padding: 10px;
+
+		
+	}
+	&__new {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		color: darken($tertiary-color, 50%);
+		background-color: $tertiary-color;
+		padding: 8px 10px;
+	}
+}
+
+.process {
+	padding: 30px 20px;
+	background-color: $secondary-background-color;
+	&__boxes {
+		@include grid;
+		padding: 20px 0 20px 15px;
+		@include responsive(laptop) {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 30px;
+		}
+	}
+	&__box {
+		position: relative;
+		@include boxes;
+		@include grid;
+		grid-template-columns: auto 1fr;
+		justify-items: start;
+		align-items: center;
+		height: 70px;
+		padding-left: 40px;
+		background-color: $primary-background-color;
+		font-weight: 500;
+		z-index: 1;
+		&::after {
+			border-radius: 20px;
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: -1;
+			background-color: lighten($primary-color, 30%);
+			opacity: 0;
+			transition: opacity 250ms;
+		}
+		
+		&:hover {
+			&::after {
+				opacity: 1;
+			}
+			& .process__icon {
+				color: $primary-color;
+			}
+		}
+	}
+	&__order {
+		background-color: $primary-color;
+		border-radius: 40px;
+		height: 30px;
+		width: 30px;
+		@include flex-center;
+		color: $secondary-text-color;
+		position: absolute;
+		left: -15px;
+	}
+	&__icon {
+		color: $process-icon-color;
+		width: 20px;
+		transition: color 250ms;
+	}
+}
+
+.search {
+	@include flex-center;
+	background-color: $city-background-color;
+	padding: 15px;
+	&__icon {
+		margin-right: 20px;
+	}
+	&__text{
+		margin: 5px 0;
+	}
+}
+
+.presentation {
+	@include flex-center;
+	flex-direction: column;
+	text-align: center;
+	padding: 30px 20px;
+}
