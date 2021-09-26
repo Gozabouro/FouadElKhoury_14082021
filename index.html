@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+<!-- Head : définition des metas et autres prérequis pour faire tourner la page-->
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -36,6 +37,7 @@
     <title>ohmyfood!</title>
   </head>
   <body>
+<!--Div pour l'animation lors du chargement de la page index-->
     <div class="loader_wrapper">
       <div class="loader">
         <div class="ball"></div>
@@ -43,7 +45,7 @@
         <div class="ball"></div>
       </div>
     </div>
-
+<!--logo-->
     <header class="header">
       <img
         class="header__logo"
@@ -51,7 +53,7 @@
         alt="Logo Ohmyfood"
       />
     </header>
-
+<!-- bande de localisation du restaurant "Paris, Belleville"-->
     <main>
       <form class="search">
         <div class="search__icon">
@@ -61,7 +63,7 @@
           <p>Paris, Belleville</p>
         </div>
       </form>
-
+<!--Présentation du restaurant et phrase d'introduction-->
       <section class="presentation">
         <h1 class="title">Réservez le menu qui vous convient</h1>
         <p class="txt">
@@ -71,6 +73,7 @@
           <button class="btn">Explorer nos restaurants</button>
         </div>
       </section>
+<!--Explication du fonctionnement des commandes et organisation-->
       <section class="process">
         <h2 class="title">Fonctionnement</h2>
         <div class="process__boxes">
@@ -109,7 +112,7 @@
           </div>
         </div>
       </section>
-      <!--Restaurant selection-->
+ <!-- Sélection des différents restaurants-->
       <section class="restaurants">
         <h2 class="restaurants__title title">Restaurants</h2>
         <div class="restaurants__boxes">
@@ -130,10 +133,12 @@
                   <h3 class="sub">La palette du goût</h3>
                   <p class="txt">Ménilmontant</p>
                 </div>
-                <div class="heart">
-                  <i class="far fa-heart heart--empty"></i>
-                  <i class="fas fa-heart heart--full"></i>
-                </div>
+<!--changement classe et id coeur pour rajouter remplissage dans css-->
+                <label class="hearts">
+                    <input type="checkbox"/>
+                    <span class="far fa-heart unchecked"></span>
+                    <span class="fas fa-heart checked"></span>
+                </label>
               </div>
             </a>
           </article>
@@ -154,10 +159,11 @@
                   <h3 class="sub">La note enchantée</h3>
                   <p class="txt">Charonne</p>
                 </div>
-                <div class="heart">
-                  <i class="far fa-heart heart--empty"></i>
-                  <i class="fas fa-heart heart--full"></i>
-                </div>
+                <label class="hearts">
+                    <input type="checkbox"/>
+                    <span class="far fa-heart unchecked"></span>
+                    <span class="fas fa-heart checked"></span>
+                </label>
               </div>
             </a>
           </article>
@@ -175,10 +181,11 @@
                   <h3 class="sub">À la française</h3>
                   <p class="txt">Cité Rouge</p>
                 </div>
-                <div class="heart">
-                  <i class="far fa-heart heart--empty"></i>
-                  <i class="fas fa-heart heart--full"></i>
-                </div>
+                <label class="hearts">
+                    <input type="checkbox"/>
+                    <span class="far fa-heart unchecked"></span>
+                    <span class="fas fa-heart checked"></span>
+                </label>
               </div>
             </a>
           </article>
@@ -196,16 +203,18 @@
                   <h3 class="sub">Le délice des sens</h3>
                   <p class="txt">Folie-Méricourt</p>
                 </div>
-                <div class="heart">
-                  <i class="far fa-heart heart--empty"></i>
-                  <i class="fas fa-heart heart--full"></i>
-                </div>
+                <label class="hearts">
+                    <input type="checkbox"/>
+                    <span class="far fa-heart unchecked"></span>
+                    <span class="fas fa-heart checked"></span>
+                </label>
               </div>
             </a>
           </article>
         </div>
       </section>
     </main>
+<!--Footer, liens et infos-->
     <footer class="footer">
       <div class="footer__logo">
         <img

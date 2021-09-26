@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -85,6 +86,7 @@ table {
   border-bottom: 3px solid #99e2d0;
 }
 
+/*Paramétrage de l'animation lors du chargement de la page d'accueil (accueil uniquement)*/
 .loader_wrapper {
   width: 100%;
   height: 100%;
@@ -97,10 +99,8 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-animation: loaderDisapear 1s ease both;
-          animation: loaderDisapear 1s ease both;
-  -webkit-animation-delay: 2.2s;
-          animation-delay: 2.2s;
+  animation: loaderDisapear 1s ease both;
+  animation-delay: 2.2s;
 }
 
 .loader_wrapper .loader {
@@ -114,10 +114,8 @@ table {
   margin: 0 8px;
   border-radius: 50%;
   transform: translate3d(0);
-  -webkit-animation: bounce 0.6s alternate forwards;
-          animation: bounce 0.6s alternate forwards;
-  -webkit-animation-iteration-count: 3;
-          animation-iteration-count: 3;
+  animation: bounce 0.6s alternate forwards;
+  animation-iteration-count: 3;
 }
 
 .loader_wrapper .loader .ball:nth-child(1) {
@@ -125,33 +123,18 @@ table {
 }
 
 .loader_wrapper .loader .ball:nth-child(2) {
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
+  animation-delay: 0.2s;
   background-color: #ff79da;
 }
 
 .loader_wrapper .loader .ball:nth-child(3) {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
+  animation-delay: 0.4s;
   background-color: #9356dc;
-}
-
-@-webkit-keyframes bounce {
-  to {
-    transform: translate3d(0, -30px, 0);
-  }
 }
 
 @keyframes bounce {
   to {
     transform: translate3d(0, -30px, 0);
-  }
-}
-
-@-webkit-keyframes loaderDisapear {
-  to {
-    opacity: 0;
-    z-index: -10;
   }
 }
 
@@ -162,6 +145,7 @@ table {
   }
 }
 
+/* CSS de toute la partie restaurant + rajout récent hover lors du passage de la souris sur les restaurants*/
 .restaurants {
   padding: 30px 20px;
 }
@@ -199,8 +183,7 @@ table {
 .restaurants__img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .restaurants__info-section {
@@ -219,6 +202,7 @@ table {
   padding: 8px 10px;
 }
 
+/*Tout le code pour la partie Process/Fonctionnement*/
 .process {
   padding: 30px 20px;
   background-color: #ffffff;
@@ -294,6 +278,7 @@ table {
   transition: color 250ms;
 }
 
+/*Mise en forme de la partie localisation "Paris, Belleville"*/
 .search {
   display: flex;
   justify-content: center;
@@ -310,6 +295,7 @@ table {
   margin: 5px 0;
 }
 
+/* Mise en forme de la partie présentation, sous le header*/
 .presentation {
   display: flex;
   justify-content: center;
@@ -346,8 +332,7 @@ table {
 }
 
 .footer__logosvg {
-  -webkit-filter: invert(100%) sepia(93%) saturate(2%) hue-rotate(196deg) brightness(109%) contrast(100%);
-          filter: invert(100%) sepia(93%) saturate(2%) hue-rotate(196deg) brightness(109%) contrast(100%);
+  filter: invert(100%) sepia(93%) saturate(2%) hue-rotate(196deg) brightness(109%) contrast(100%);
   height: 20px;
 }
 
@@ -382,12 +367,17 @@ table {
   font-weight: bold;
 }
 
-.heart {
-  justify-self: end;
-  align-self: center;
+/*nomenclature des coeurs de base, affichée sur page index et restaurants*/
+.hearts {
+  position: absolute;
+  right: 20px;
+  bottom: 35px;
+  height: 25px;
+  font-size: 30px;
+  cursor: pointer;
 }
 
-.heart :hover {
+.hearts :hover {
   opacity: 1;
   font-weight: bold;
   background: linear-gradient(184deg, #ff79da 0%, #9356dc 100%);
@@ -396,38 +386,40 @@ table {
   color: transparent;
 }
 
-.heart--empty {
-  cursor: pointer;
-  position: absolute;
-  z-index: 2;
-  font-size: 2rem;
-  opacity: 1;
-  transition: opacity 3s ease-in-out;
+.hearts :checked ~ .unchecked {
+  display: none;
 }
 
-.heart--full {
-  font-size: 2rem;
-  background-image: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
+.hearts :checked ~ .checked {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0);
 }
 
-.heart--full::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  bottom: -50%;
-  left: -50%;
-  height: 200%;
-  width: 200%;
-  background: #f6f6f6;
-  border-radius: 35%;
-  transform: translateY(0) rotate(0deg);
-  transition: transform 5.5s ease-out;
+/* Placement coeur des pages restaurants*/
+#heart {
+  position: initial;
+  margin-top: 20px;
+}
+
+/* animation coeur pour remplissage*/
+.hearts input[type="checkbox"], .hearts .checked {
+  display: none;
+  animation: like 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes like {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    background: linear-gradient(to bottom, #9356DC, #FF79DA);
+    -webkit-background-clip: text;
+  }
+  100% {
+    background: linear-gradient(to bottom, #9356DC, #FF79DA);
+    -webkit-background-clip: text;
+  }
 }
 
 .btn {
@@ -456,8 +448,7 @@ table {
 .poster__img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .menu {
@@ -510,34 +501,28 @@ table {
   gap: 20px;
   align-items: center;
   grid-template-columns: 1fr auto auto;
-  -webkit-animation: appearance 800ms ease-out forwards;
-          animation: appearance 800ms ease-out forwards;
+  animation: appearance 800ms ease-out forwards;
   opacity: 0;
 }
 
 .food:nth-child(1) {
-  -webkit-animation-delay: 400ms;
-          animation-delay: 400ms;
+  animation-delay: 400ms;
 }
 
 .food:nth-child(2) {
-  -webkit-animation-delay: 800ms;
-          animation-delay: 800ms;
+  animation-delay: 800ms;
 }
 
 .food:nth-child(3) {
-  -webkit-animation-delay: 1200ms;
-          animation-delay: 1200ms;
+  animation-delay: 1200ms;
 }
 
 .food:nth-child(4) {
-  -webkit-animation-delay: 1600ms;
-          animation-delay: 1600ms;
+  animation-delay: 1600ms;
 }
 
 .food:nth-child(5) {
-  -webkit-animation-delay: 2000ms;
-          animation-delay: 2000ms;
+  animation-delay: 2000ms;
 }
 
 .food__description {
@@ -593,17 +578,6 @@ table {
   opacity: 1;
 }
 
-@-webkit-keyframes appearance {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 @keyframes appearance {
   0% {
     transform: translateY(100%);
@@ -614,3 +588,4 @@ table {
     opacity: 1;
   }
 }
+/*# sourceMappingURL=main.css.map */

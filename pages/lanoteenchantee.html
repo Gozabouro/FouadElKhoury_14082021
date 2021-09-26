@@ -60,10 +60,12 @@
         <div class="menu">
           <section class="menu__header">
             <h1 class="menu__title">La note enchantée</h1>
-            <div class="heart">
-              <i class="far fa-heart heart--empty"></i>
-              <i class="fas fa-heart heart--full"></i>
-            </div>
+<!--Ajout de la nouvelle fonctionnalité coeur : hover et remplissage-->
+            <label class="hearts" id="heart">
+              <input type="checkbox" />
+              <span class="far fa-heart unchecked"></span>
+              <span class="fas fa-heart checked"></span>
+            </label>
           </section>
           <div class="menu__content">
             <section class="menu__course">
