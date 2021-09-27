@@ -39,7 +39,7 @@
   	        animation: like 2s;
   	-webkit-animation-fill-mode: forwards;
   	        animation-fill-mode: forwards;
-            /* CSS specific to iOS devices */ 
+            /* CSS specific to iOS devices - Not working*/
             @supports (-webkit-touch-callout: none) {
               display: none;
   	-webkit-animation: like 2s;

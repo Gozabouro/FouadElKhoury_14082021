@@ -86,6 +86,13 @@ table {
   border-bottom: 3px solid #99e2d0;
 }
 
+.agency-index {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  background-color: #f6f6f6;
+  max-width: 1440px;
+  margin: auto;
+}
+
 /*Paramétrage de l'animation lors du chargement de la page d'accueil (accueil uniquement)*/
 .loader_wrapper {
   width: 100%;
@@ -406,7 +413,7 @@ table {
   display: none;
   animation: like 2s;
   animation-fill-mode: forwards;
-  /* CSS specific to iOS devices */
+  /* CSS specific to iOS devices - Not working*/
 }
 
 @supports (-webkit-touch-callout: none) {
@@ -448,6 +455,13 @@ table {
 .btn:hover {
   box-shadow: 3px 4px 11px 5px rgba(0, 0, 0, 0.2);
   opacity: 0.8;
+}
+
+.agency-restaurant {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  background-color: #f6f6f6;
+  max-width: 1440px;
+  margin: auto;
 }
 
 .poster {
@@ -568,7 +582,7 @@ table {
   border-radius: 0 20px 20px 0;
   transition: all 400ms ease-in-out;
   transform: translateX(100%);
-  /* CSS specific to iOS devices */
+  /* CSS specific to iOS devices- Not Working */
 }
 
 @supports (-webkit-touch-callout: none) {

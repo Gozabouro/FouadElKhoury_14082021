@@ -1,3 +1,10 @@
+.agency-restaurant {
+	@include font-text;
+	background-color: $primary-background-color;
+	max-width: 1440px;
+	margin: auto;
+}
+
 .poster {
 	height: 270px;
 	&__img {
@@ -77,7 +84,7 @@
 		border-radius: 0 20px 20px 0;
 		transition: all 400ms ease-in-out;
 		transform: translateX(100%);
-		/* CSS specific to iOS devices */ 
+		/* CSS specific to iOS devices- Not Working */ 
 		@supports (-webkit-touch-callout: none) {
 			background-color: $tertiary-color;
 		color: $secondary-text-color;
