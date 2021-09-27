@@ -406,9 +406,6 @@ table {
   display: none;
   animation: like 2s;
   animation-fill-mode: forwards;
-  transform: translate3d(0, 0, 0);
-  transform: translateY(0) rotate(0deg);
-  transition: transform 5.5s ease-out;
 }
 
 @keyframes like {
