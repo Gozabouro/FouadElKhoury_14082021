@@ -406,6 +406,15 @@ table {
   display: none;
   animation: like 2s;
   animation-fill-mode: forwards;
+  /* CSS specific to iOS devices */
+}
+
+@supports (-webkit-touch-callout: none) {
+  .hearts input[type="checkbox"], .hearts .checked {
+    display: none;
+    animation: like 2s;
+    animation-fill-mode: forwards;
+  }
 }
 
 @keyframes like {
@@ -559,6 +568,22 @@ table {
   border-radius: 0 20px 20px 0;
   transition: all 400ms ease-in-out;
   transform: translateX(100%);
+  /* CSS specific to iOS devices */
+}
+
+@supports (-webkit-touch-callout: none) {
+  .food__check {
+    background-color: #99e2d0;
+    color: #ffffff;
+    height: 100%;
+    width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 20px 20px 0;
+    transition: all 400ms ease-in-out;
+    transform: translateX(100%);
+  }
 }
 
 .food__icon {
