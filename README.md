@@ -1,11 +1,14 @@
 # FouadElKhoury_14082021
 Dyamiser une page web avec des animations CSS.
 
-Projet :
+Projet Ohmygfood! :
 
 Ohmyfood! est une jeune startup qui voudrait s'imposer sur le marché de la restauration. L'objectif est de développer un site 100% mobile qui répertorie les menus de restaurants gastronomiques. Clients pourront composer le menu de leur repas por que les plats soient prêt à leur arrivée. 
 
-![Image text](/home/eurus/FouadElKhoury_14082021-main/FouadElKhoury_14082021/img/screenshot.png)
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/Gozabouro/FouadElKhoury_3_14082021/blob/4e6d476486fe692bfbd6e7fe5e8c31d50092b406/img/screenshot.png">
+<img src="https://raw.githubusercontent.com/Gozabouro/FouadElKhoury_3_14082021/main/img/screenshot.png">
+</a>
+
 
 Compétences évaluées :
 - Mettre en place une structure de navigation pour un site web
